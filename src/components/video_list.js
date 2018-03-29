@@ -1,11 +1,16 @@
 import React from 'react';
+import VedioListItem from './video_list_item'
 
-const SearchList =(props)=>{
+const VideoList =(props)=>{
+  var videiosList =  props.videos.map((video)=>{
+        return <VedioListItem key={video.etag} video={video}/>
+    })
+console.log(videiosList)
     return(
-      <ul className="col-md-4 list-group">
-      {props.videos.length}
+      <ul className="list-group">
+        {videiosList}
       </ul>
     )
 }
 
-export default SearchList
+export default VideoList
